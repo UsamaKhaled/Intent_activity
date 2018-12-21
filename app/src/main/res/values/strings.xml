@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="Register_with_Email">Register with Email</string>
+    <string name="full_name">Full Name</string>
+    <string name="company">Company</string>
+    <string name="Email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="name_check1">Name can not be empty</string>
+    <string name="name_check2">name must be 32 or less letters</string>
+    <string name="company_check">company name can not be empty</string>
+    <string name="Email_check">Email can not be empty</string>
+    <string name="phone_check1">phone can not be empty</string>
+    <string name="phone_check2">please enter valid number</string>
+    <string name="pass_check1">pass can not be empty</string>
+    <string name="pass_check2">pass can not be less than 8 char</string>
+    <string name="title_activity_home">home</string>
+
+</resources>
