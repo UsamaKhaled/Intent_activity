@@ -3,6 +3,7 @@ package com.usama2.myapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,32 +38,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        if(v.getId() == R.id.btnreg){
+        if (v.getId() == R.id.btnreg) {
 
-            if(full_name.getText().toString().isEmpty()){
+            if (full_name.getText().toString().isEmpty()) {
 
                 Toast.makeText(this, R.string.name_check1, Toast.LENGTH_SHORT).show();
-            }else if(full_name.getText().toString().length()>32){
+            } else if (full_name.getText().toString().length() > 32) {
                 Toast.makeText(this, R.string.name_check2, Toast.LENGTH_SHORT).show();
-            }else{
-                if(company_name.getText().toString().isEmpty()){
+            } else {
+                if (company_name.getText().toString().isEmpty()) {
                     Toast.makeText(this, R.string.company_check, Toast.LENGTH_SHORT).show();
-                }else{
-                    if(email.getText().toString().isEmpty()){
+                } else {
+                    if (email.getText().toString().isEmpty()) {
                         Toast.makeText(this, R.string.Email_check, Toast.LENGTH_SHORT).show();
-                    }else{
-                        if(phone.getText().toString().isEmpty()){
+
+                    } else if(Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()==false){
+                        Toast.makeText(this, R.string.name_check1, Toast.LENGTH_SHORT).show();
+                    }else {
+                        if (phone.getText().toString().isEmpty()) {
                             Toast.makeText(this, R.string.phone_check1, Toast.LENGTH_SHORT).show();
-                        }else if(phone.getText().toString().length() != 11){
+                        } else if (phone.getText().toString().length() != 11) {
                             Toast.makeText(this, R.string.phone_check2, Toast.LENGTH_SHORT).show();
-                        }else{
-                            if(password.getText().toString().isEmpty()){
+                        } else {
+                            if (password.getText().toString().isEmpty()) {
                                 Toast.makeText(this, R.string.pass_check1, Toast.LENGTH_SHORT).show();
-                            }else if(password.getText().toString().length() < 8){
+                            } else if (password.getText().toString().length() < 8) {
                                 Toast.makeText(this, R.string.pass_check2, Toast.LENGTH_SHORT).show();
-                            }else{
-                                Intent home_screen =new Intent(this, home.class);
+                            } else {
+                                Intent home_screen = new Intent(this, home.class);
                                 startActivity(home_screen);
+                                //finish();
 
                             }
                         }
